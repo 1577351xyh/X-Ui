@@ -24,7 +24,6 @@ export default {
   data() {
     return {
       navArr: [],
-      routerIndex: '',
       routerFooter: [],
     }
   },
@@ -46,7 +45,6 @@ export default {
       let cuurrPuoter = this.$router.currentRoute.path
       this.$router.options.routes[1].children.forEach((vm, index, arr) => {
         if (cuurrPuoter.indexOf(vm.path) > -1) {
-          this.routerIndex = index
           if (index + 1 !== arr.length) {
             this.routerFooter.push(this.obj(index + 1), this.obj(index - 1))
           } else {
@@ -60,16 +58,13 @@ export default {
     },
     obj(index) {
       let obj = {}
-      if (index === -1) {
-        return (obj = {
-          path: '',
-          name: '',
-        })
+      let name = ''
+      let path = ''
+      if (index !== -1) {
+        path = this.$router.options.routes[1].children[index].path
+        name = this.$router.options.routes[1].children[index].name
       }
-      return (obj = {
-        path: this.$router.options.routes[1].children[index].path,
-        name: this.$router.options.routes[1].children[index].name,
-      })
+      return (obj = { name, path })
     },
     createdDom() {
       if (this.$refs.content) {
