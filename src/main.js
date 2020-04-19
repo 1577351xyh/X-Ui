@@ -5,6 +5,9 @@ import '../style/common.css'
 Vue.config.productionTip = false
 import 'prismjs/themes/prism.css';
 
+import Ea from 'e-admin';
+Vue.use(Ea)
+
 new Vue({
   router,
   render: h => h(App),

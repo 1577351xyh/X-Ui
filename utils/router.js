@@ -19,7 +19,11 @@ router.forEach(vm => {
 })
 
 ComontRouters[1].children.forEach((vm, index) => {
-  vm.component = () => import(`../md/${vm.path}.md`)
+  if (vm.path === 'icon') {
+    vm.component = () => import(`../md/demo.vue`)
+  } else {
+    vm.component = () => import(`../md/${vm.path}.md`)
+  }
 })
 
 export default new Router({

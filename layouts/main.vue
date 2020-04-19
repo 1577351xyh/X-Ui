@@ -57,6 +57,7 @@ export default {
       this.$router.push(path)
     },
     obj(index) {
+      console.log(index)
       let obj = {}
       let name = ''
       let path = ''
@@ -97,10 +98,38 @@ export default {
     flex-grow: 1;
     text-align: left;
     margin: 10px;
+    padding-left: 30px;
+    padding-top: 8px;
+    h2 {
+      line-height: 32px;
+      margin-bottom: 20px;
+    }
+    h5 {
+      line-height: 26px;
+    }
+    p {
+      line-height: 32px;
+    }
+    pre {
+      line-height: 1.4;
+      background-color: rgb(40, 44, 52);
+      padding: 1.25rem 1.5rem;
+      margin: 0.85rem 0px;
+      border-radius: 6px;
+      overflow: auto;
+      color: #fff;
+    }
+    .token.operator {
+      color:#fff;
+       background: transparent
+    }
     .footer {
       display: flex;
       justify-content: space-between;
       margin-top: 30px;
+      span {
+        cursor: pointer;
+      }
     }
   }
   .right-nav {

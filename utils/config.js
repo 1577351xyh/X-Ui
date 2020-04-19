@@ -4,6 +4,10 @@ export const router = [
     title: '开发指南',
     children: [
       {
+        name: '介绍',
+        path: 'jieshao'
+      },
+      {
         name: '安装',
         path: 'anzhuang'
       },
